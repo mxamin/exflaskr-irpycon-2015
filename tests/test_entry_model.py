@@ -1,10 +1,11 @@
+import os
 import unittest
 
 from flask import current_app
 from app import create_app, db
 
 
-class BasicsTestCase(unittest.TestCase):
+class EntryModelTestCase(unittest.TestCase):
     def setUp(self):
         self.app = create_app('testing')
         self.app_context = self.app.app_context()
@@ -16,16 +17,10 @@ class BasicsTestCase(unittest.TestCase):
         db.drop_all()
         self.app_context.pop()
 
-    def test_app_exists(self):
+    def test_database(self):
         """
-        App has been initialized
-        """
-
-        self.assertFalse(current_app is None)
-
-    def test_app_is_testing(self):
-        """
-        App is in testing mode
+        Ensure that the database file exists
         """
 
-        self.assertTrue(current_app.config['TESTING'])
+        tester = os.path.exists('data-test.sqlite')
+        self.assertTrue(tester)
