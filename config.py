@@ -10,7 +10,7 @@ class Config(object):
     read_env(basedir)
 
     # CSRF secret key
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'asdfsdafdsfdsfds'
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard_to_guess_string'
 
     # SQLAlchemy configuration keys, list of all keys:
     # https://pythonhosted.org/Flask-SQLAlchemy/config.html
