@@ -1,5 +1,14 @@
 {% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 
 {% block page_content %}
-<h1>Extended Flaskr is Working!</h1>
+{{ wtf.quick_form(form)}}
+<br>
+<ul class="entries">
+  {% for entry in entries %}
+  <li><h3>{{ entry.title }}</h3>{{ entry.text|safe }}</li>
+  {% else %}
+  <li><em>Unbelievable.  No entries here so far</em></li>
+  {% endfor %}
+  </ul>
 {% endblock %}

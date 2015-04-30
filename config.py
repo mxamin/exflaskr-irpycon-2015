@@ -9,6 +9,9 @@ class Config(object):
     # Import environment variables from .env file, if such file exists.
     read_env(basedir)
 
+    # CSRF secret key
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'asdfsdafdsfdsfds'
+
     # SQLAlchemy configuration keys, list of all keys:
     # https://pythonhosted.org/Flask-SQLAlchemy/config.html
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
