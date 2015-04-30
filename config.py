@@ -13,6 +13,9 @@ class Config(object):
     # https://pythonhosted.org/Flask-SQLAlchemy/config.html
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
 
+    # Access Bootstrap js files locally
+    BOOTSTRAP_SERVE_LOCAL = True
+
     @staticmethod
     def init_app(app):
         pass
