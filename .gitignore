@@ -1,0 +1,26 @@
+# Temporary files
+*~
+*.old
+\#*\#
+.\#*
+
+# Python files
+*.py[cod]
+
+# Installer logs
+pip-log.txt
+
+# Unit test / Coverage reports
+cover
+.coverage
+.tox
+nosetests.xml
+
+# SQLite databases
+*.sqlite
+
+# Virtual environment
+venv
+
+# Environment file
+.env
